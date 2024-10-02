@@ -6,7 +6,7 @@ import os
 json_file_path = 'data/landing_page_data_themeui.json' 
 
 def load_existing_data(file_path):
-    if os.path.exists(file_path):  # Memeriksa apakah file ada
+    if os.path.exists(file_path):  
         with open(file_path, 'r') as json_file:
             return json.load(json_file)
     return None
@@ -14,7 +14,7 @@ def load_existing_data(file_path):
 def save_data_if_changed(new_data, file_path):
     existing_data = load_existing_data(file_path)
     
-    if existing_data != new_data:  # Hanya menulis jika datanya berbeda
+    if existing_data != new_data:  
         with open(file_path, 'w') as json_file:
             json.dump(new_data, json_file, indent=4)
         print(f"Data has been saved to {file_path}")
